@@ -2,10 +2,10 @@
 
 async function fetchAndDisplayMods() {
   try {
-    const themesResponse = await fetch('https://api.github.com/repos/YOUR_USERNAME/YOUR_REPO_NAME/contents/themes'); 
+    const themesResponse = await fetch('https://api.github.com/repos/BlueOutside/The-Bloxstrap-mods-collection/Themes'); 
     const themesData = await themesResponse.json();
 
-    const utilitiesResponse = await fetch('https://api.github.com/repos/YOUR_USERNAME/YOUR_REPO_NAME/contents/utilities');
+    const utilitiesResponse = await fetch('https://api.github.com/repos/BlueOutside/The-Bloxstrap-mods-collection/contents/utilities');
     const utilitiesData = await utilitiesResponse.json();
 
     // Process themesData and utilitiesData 
