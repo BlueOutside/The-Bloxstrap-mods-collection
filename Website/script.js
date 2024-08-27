@@ -1,3 +1,28 @@
+// script.js
+
+async function fetchAndDisplayMods() {
+  try {
+    const themesResponse = await fetch('https://api.github.com/repos/YOUR_USERNAME/YOUR_REPO_NAME/contents/themes'); 
+    const themesData = await themesResponse.json();
+
+    const utilitiesResponse = await fetch('https://api.github.com/repos/YOUR_USERNAME/YOUR_REPO_NAME/contents/utilities');
+    const utilitiesData = await utilitiesResponse.json();
+
+    // Process themesData and utilitiesData 
+    // (They will contain file/folder information)
+
+    displayMods("themes", themesData); 
+    displayMods("utilities", utilitiesData);
+
+  } catch (error) {
+    console.error('Error fetching data:', error);
+  }
+}
+
+// (Rest of your displayMods function and other logic)
+
+fetchAndDisplayMods(); 
+
 // Example data (replace with your actual mod data)
 const themes = [
     {
@@ -29,4 +54,4 @@ function displayMods(modType, modData) {
 
 // Call the function to display themes and utilities
 displayMods("themes", themes);
-displayMods("utilities", utilities); 
+displayMods("utilities", utilities);
